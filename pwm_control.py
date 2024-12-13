@@ -13,7 +13,7 @@ pca = adafruit_pca9685.PCA9685(i2c)
 pca.frequency = 1000  # Global frequency for all PWM channels (1000 Hz)
 
 # Select the channel for the motor (e.g., channel 0 for PWM control)
-motor_channel = 2000
+motor_channel = 0
 
 # Main loop to control motor speed and frequency
 while True:

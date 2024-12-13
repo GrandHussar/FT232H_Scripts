@@ -58,8 +58,8 @@ def collect_sensor_data():
                 # Attempt to restart I2C bus
                 i2c = busio.I2C(board.SCL, board.SDA)  # Re-initialize the I2C bus
                 sensor = SensorDataHandler(i2c, flask_url="http://localhost:5000/")
-                time.sleep(1)  # Delay before retrying the data collection
-            time.sleep(0.5)
+                 # Delay before retrying the data collection
+            time.sleep(0.003)
 
     except Exception as e:
         print(f"Error collecting sensor data: {e}")
@@ -85,7 +85,7 @@ def main():
 
     # Keep the main thread alive to let other threads run
     while True:
-        time.sleep(0.1)
+        time.sleep(0.005)
 
 if __name__ == "__main__":
     try:
